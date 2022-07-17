@@ -26,6 +26,10 @@ public class TaskModel {
         this.updatedAt = updatedAt;
     }
 
+    public TaskModel() {
+        this.deadline = new Date();
+    }
+
     public int getId() {
         return id;
     }
@@ -54,11 +58,11 @@ public class TaskModel {
         this.description = description;
     }
 
-    public Boolean getCompleted() {
+    public Boolean getIsCompleted() {
         return isCompleted;
     }
-    public void setCompleted(Boolean completed) {
-        isCompleted = completed;
+    public void setIsCompleted(Boolean isCompleted) {
+        this.isCompleted = isCompleted;
     }
 
     public String getNotes() {
