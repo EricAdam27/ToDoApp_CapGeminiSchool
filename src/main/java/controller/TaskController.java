@@ -114,7 +114,7 @@ public class TaskController {
             connection = ConnectionFactory.getConnection();
             statement = connection.prepareStatement(sql);
             statement.setInt(1, idProject);
-            statement.executeQuery();
+            resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
 

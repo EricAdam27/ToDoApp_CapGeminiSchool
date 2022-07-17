@@ -18,6 +18,9 @@ public class ProjectModel {
         this.updatedAt = updatedAt;
     }
 
+    public ProjectModel() {
+    }
+
     public int getId() {
         return id;
     }
