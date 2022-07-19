@@ -3,10 +3,7 @@ package controller;
 import model.ProjectModel;
 import util.ConnectionFactory;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +28,8 @@ public class ProjectController {
             statement.setDate(3, new Date(project.getCreatedAt().getTime()));
             statement.setDate(4, new Date(project.getUpdatedAt().getTime()));
             statement.execute();
-        } catch (Exception e) {
-            throw new RuntimeException("Erro ao salvar projeto "+ e.getMessage(), e);
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao salvar projeto ", e);
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
         }
